@@ -49,7 +49,7 @@ jobs:
           wget -O kind https://github.com/kubernetes-sigs/kind/releases/download/v0.12.0/kind-linux-amd64
           chmod +x kind
           mv kind /usr/local/bin/kind
-          kind create cluster --config test/e2e/kind.yaml --image kindest/node:${{ matrix.k8s }} --name kind --wait 600s
+          kind create cluster -v 6 --config test/e2e/kind.yaml --image kindest/node:${{ matrix.k8s }} --name kind --wait 600s
         #uses: ./.github/actions/setup-kind
         #with:
           #version: v0.12.0
